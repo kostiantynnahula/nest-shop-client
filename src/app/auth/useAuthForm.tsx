@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 import { authService } from '@/services/auth/auth.services';
 
-import { DASHBOARD_URL, PUBLIC_URL } from '@/config/url.config';
+import { DASHBOARD_URL } from '@/config/url.config';
 
 import { IAuthForm } from '../shared/types/auth.interface';
 
