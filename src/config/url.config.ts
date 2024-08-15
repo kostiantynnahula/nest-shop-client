@@ -15,7 +15,7 @@ export const DASHBOARD_URL = {
 };
 export const STORE_URL = {
   root: (url = '') => `/store${url ? url : ''}`,
-  home: () => STORE_URL.root('/'),
+  home: (storeId = '') => STORE_URL.root(`/${storeId}`),
   products: (storeId = '') => STORE_URL.root(`/${storeId}/products`),
   productCreate: (storeId = '') => STORE_URL.root(`/${storeId}/products/create`),
   productEdit: (storeId = '', id = '') => STORE_URL.root(`/${storeId}/products/${id}`),

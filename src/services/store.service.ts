@@ -21,9 +21,9 @@ class StoreService {
     return data;
   }
 
-  async create(data: IStoreCreate, storeId: string) {
+  async create(data: IStoreCreate) {
     const { data: store } = await axiosWithAuth<IStore>({
-      url: API_URL.stores(`/${storeId}`),
+      url: API_URL.stores(),
       method: 'POST',
       data,
     })

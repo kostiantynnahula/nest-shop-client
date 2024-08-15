@@ -4,10 +4,12 @@ import { API_URL } from "@/config/api.config";
 
 class UserService {
   async getProfile() {
-    return await axiosClassic<IUser[]>({
+    const { data } = await axiosWithAuth<IUser>({
       url: API_URL.users(`/profile`),
       method: 'GET',
     });
+
+    return data;
   }
 
   async toggleFavorite(storeId: string) {
