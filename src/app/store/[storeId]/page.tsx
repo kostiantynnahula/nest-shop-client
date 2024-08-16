@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { Store } from './store';
+import { Store } from './Store';
 import { NO_INDEX_PAGE } from '@/constants/seo.constants';
 
 export const metadata: Metadata = {
