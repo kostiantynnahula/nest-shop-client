@@ -6,4 +6,4 @@ export interface IStore {
 
 export interface IStoreCreate extends Pick<IStore, 'title'> {}
 
-export interface IStoreEdit extends Omit<IStore, 'id'> {}
+export interface IStoreUpdate extends Omit<IStore, 'id'> {}
