@@ -51,7 +51,8 @@ export function DataTable<TData, TValue>({
 		onColumnFiltersChange: setColumnFilters,
 		getFilteredRowModel: getFilteredRowModel(),
 		state: {
-			sorting
+			sorting,
+			columnFilters
 		}
 	});
 
@@ -61,10 +62,12 @@ export function DataTable<TData, TValue>({
 				<div className={styles.search}>
 					<Input
 						placeholder='Search...'
-						value={(table.getColumn('email')?.getFilterValue() as string) ?? ''}
-						onChange={event =>
-							table.getColumn('email')?.setFilterValue(event.target.value)
+						value={
+							(table.getColumn(filterKey)?.getFilterValue() as string) ?? ''
 						}
+						onChange={event => {
+							table.getColumn(filterKey)?.setFilterValue(event.target.value);
+						}}
 						className='max-w-sm'
 					/>
 				</div>
