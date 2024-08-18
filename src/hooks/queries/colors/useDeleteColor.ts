@@ -6,14 +6,14 @@ import { useMemo } from "react";
 import toast from "react-hot-toast";
 
 export const useDeleteColor = () => {
-  const params = useParams<{ storeId: string }>();
+  const params = useParams<{ storeId: string; colorId: string }>();
   const { push } = useRouter();
 
   const queryClient = useQueryClient();
 
   const { mutate: deleteColor, isPending: isLoadingDelete } = useMutation({
     mutationKey: ["delete color"],
-    mutationFn: () => colorsService.delete(params.storeId),
+    mutationFn: () => colorsService.delete(params.colorId),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["get colors for store dashboard"] });
       toast.success("Color deleted successfully");
