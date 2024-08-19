@@ -29,7 +29,7 @@ export function Products() {
 				title: product.title,
 				price: formatPrice(product.price),
 				category: product.category.title,
-				color: product.color.value,
+				color: product.color?.value || '',
 				storeId: product.storeId
 			}))
 		: [];
